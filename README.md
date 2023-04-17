@@ -12,12 +12,14 @@ Challenge: upon the first install and command executions everything worked as it
 why the mySQL db-1 container didnt run. It occurred to me that the mySQL server was already running after I had opened the mySQL Workbench application on my host machine for other projects. I ran services.msc in the ' Run' search box and shutdown mySQL. Then I restarted Docker Desktop and activated the Wordpress containers and was able to access wordpress admin console in the browser. 
 
 
-#A: Opening an Attack Surface
-1. in the Wordpress admin console I added a new plugin (Reflex Gallery previous vs. 3.1.3)
+Exploit #1: Opening an Attack Surface 
+a. in the Wordpress admin console I added a new plugin (Reflex Gallery previous vs. 3.1.3)
 ![image](https://user-images.githubusercontent.com/55906428/232391057-10111e4f-e0b8-4dba-8bf3-ed708208a289.png)
-2. made sure the website url is accessible from the host OS and Kali interactive mode at 127.0.0.1:8080 I ran wpscan against the url >> wpscan --url http://127.0.0.1:8080 --random-agent/
-3. in Kali Linux interactive mode I started Metasploit database.
+b. made sure the website url is accessible from the host OS and Kali interactive mode at 127.0.0.1:8080 I ran wpscan against the url >> wpscan --url http://127.0.0.1:8080 --random-agent/
+c. in Kali Linux interactive mode I started Metasploit database.
 
 ![Kali Linux vs Wordpress](https://user-images.githubusercontent.com/55906428/232394941-4d8acac6-fec9-4ffd-974b-392c6d1a968c.gif)
-4. after searching for a Wordpress plugin Reflex payload in metasploit its time to set it up and exploit or website container in Docker Desktop. 
+d. after searching for a Wordpress plugin Reflex payload in metasploit its time to set it up and exploit or website container in Docker Desktop. 
 ![Meterpreter](https://user-images.githubusercontent.com/55906428/232397319-4107bc5a-bb80-452d-9214-c15d1ef442fa.gif)
+e. after opening the channel to exploit the vulnerable web application in metasploit I created a text document to test if I have really accessed the server. 
+![Exploit 1](https://user-images.githubusercontent.com/55906428/232566954-2d8ce4eb-2f18-49f2-ae13-4554990e8c0c.gif)
