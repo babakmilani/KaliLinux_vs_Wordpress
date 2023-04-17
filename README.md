@@ -10,9 +10,6 @@ Write-Up:
 
 Challenge: upon the first install and command executions everything worked as it was supposed to, but after a host machine shutdown and restart the docker container db-1 din't run. after many attempts to solve the issue, I discovered the reason
 why the mySQL db-1 container didnt run. It occurred to me that the mySQL server was already running after I had opened the mySQL Workbench application on my host machine for other projects. I ran services.msc in the ' Run' search box and shutdown mySQL. Then I restarted Docker Desktop and activated the Wordpress containers and was able to access wordpress admin console in the browser. 
-
-![Screenshot (49)](https://user-images.githubusercontent.com/55906428/232388995-5f72815c-9bf9-4bc7-a65a-30f550977655.png)
-
 A: Opening an Attack Surface
 1. in the Wordpress admin console I added a new plugin (Reflex Gallery previous vs. 3.1.3)
 ![image](https://user-images.githubusercontent.com/55906428/232391057-10111e4f-e0b8-4dba-8bf3-ed708208a289.png)
