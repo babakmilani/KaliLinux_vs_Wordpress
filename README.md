@@ -23,3 +23,7 @@ d. after searching for a Wordpress plugin Reflex payload in metasploit its time 
 ![Meterpreter](https://user-images.githubusercontent.com/55906428/232397319-4107bc5a-bb80-452d-9214-c15d1ef442fa.gif)
 e. after opening the channel to exploit the vulnerable web application in metasploit I created a text document to test if I have really accessed the server. 
 ![Exploit 1](https://user-images.githubusercontent.com/55906428/232566954-2d8ce4eb-2f18-49f2-ae13-4554990e8c0c.gif)
+
+Exploit #2: XSS
+a. edited index.php in /wp-content with a simple php pop alert
+![Exploit 2](https://user-images.githubusercontent.com/55906428/232601883-ecbb35e7-81b3-4f56-8960-5edf43cb2c34.gif)
