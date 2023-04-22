@@ -28,3 +28,20 @@ e. after opening the channel to exploit the vulnerable web application in metasp
 Exploit #2: XSS
 a. edited index.php in /wp-content with a simple php pop alert
 ![Exploit 2](https://user-images.githubusercontent.com/55906428/232601883-ecbb35e7-81b3-4f56-8960-5edf43cb2c34.gif)
+
+Exploit #3: SQLi (plugin: olimometer )
+1. Searched the plugins database from the wordpress admin portal 127.0.0.1/wp-admin/ and couldnt find the plugin)
+![image](https://user-images.githubusercontent.com/55906428/233787314-4cdc8c44-c88e-4ce3-af29-96988f3469db.png)
+3. 2. searched the web for the plugin and found it in https://www.exploit-db.com/
+![image](https://user-images.githubusercontent.com/55906428/233787354-b98e308b-415d-4173-8f1f-4a0da8a97e6c.png)
+5. 3. downloaded the zip file and installed it in my wordpress website. 
+6. 4. opened powershell and executed the command >> sqlmap -u "http://127.0.0.1:8080/wp-content/plugins/olimometer/thermometer.php?olimometer_id=1" --dbs --threads=5 --random-agent --no-cast
+-u : specify target URL
+--random-agent : use tandomly selected HTTP User-agent header value
+--threads: Maximum number of concurrent HTTP(s) request(default 1)
+--no-cast: Turn off payload casting mechanism
+--dbs: retrieve info about database server name. 
+![image](https://user-images.githubusercontent.com/55906428/233787432-7d581325-a37f-4b3f-9679-aba087e7a3a1.png)
+6. sqlmap was able to find vulnerabilities 
+![image](https://user-images.githubusercontent.com/55906428/233787477-e280d208-d178-44c6-8d68-92c0f4bf6b5d.png)
+![image](https://user-images.githubusercontent.com/55906428/233787515-ef738829-1e22-415c-b2d4-f62d54434b1c.png)
