@@ -6,7 +6,8 @@ Write-Up:
 2. Open a terminal and clone the Wordpress repo to desired folder : git clone https://github.com/0xrutvij/wpVSkali.git.
 3. goto new folder with git repo and make a new director for docker compose to use as source : mkdir wpFolder
 4. run >> docker compose up -d to start the containers. 
-5. check containers are running >> docker ps -a
+5. start kali linux interactive mode in powershell >> docker exec -it [containerID_kaliCP] bash
+6. check containers are running >> docker ps -a
 
 Challenge: upon the first install and command executions everything worked as it was supposed to, but after a host machine shutdown and restart the docker container db-1 din't run. after many attempts to solve the issue, I discovered the reason
 why the mySQL db-1 container didnt run. It occurred to me that the mySQL server was already running after I had opened the mySQL Workbench application on my host machine for other projects. I ran services.msc in the ' Run' search box and shutdown mySQL. Then I restarted Docker Desktop and activated the Wordpress containers and was able to access wordpress admin console in the browser. 
